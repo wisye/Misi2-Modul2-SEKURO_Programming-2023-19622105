@@ -1,0 +1,199 @@
+#include <iostream>
+#include <string>
+using namespace std;  
+
+// Fungsi
+void buka();
+void nama();
+void decision();
+void menu();
+void beli();
+void strouke();
+
+// Data
+int q = 0;
+int w = 0;
+int e = 0;
+int r = 0;
+int t = 0;
+int y = 0;
+int u = 0;
+int i = 0;
+int o = 0;
+int p = 0;
+string name;
+
+int main()
+{
+buka();
+return 0;
+}
+
+// Fungsi yang menentukan buka atau tidaknya
+void buka()
+{
+char tutup;
+cout << "Buka ? (y/n): ";
+cin >> tutup;
+
+switch (tutup)
+{
+case 'y':
+    nama();
+    break;
+
+case 'n':
+    strouke(); //Jika tutup langsung ke total
+    break;
+}
+}
+
+// Fungsi yang meminta nama
+void nama()
+{
+cout << "Masukkan nama: ";
+(cin >> name); // I DONT KNOW HOW TO ALLOW SPACES AND GETLINE DONT WORK FOR SOME REASON
+decision();
+}
+
+// Fungsi yang menjadi menu utama
+void decision()
+{
+int keputusan;
+cout << "" << endl;
+cout << "Pilih angka untuk aksi yang ingin dilakukan" << endl;
+cout << "1. Lihat menu" << endl;
+cout << "2. Beli" << endl;
+cout << "3. Keluar" << endl;
+cout << ">> ";
+cin >> keputusan;
+
+switch (keputusan)
+{
+case (1):
+    menu();
+    break;
+
+case (2):
+    beli();
+    break;
+
+case (3):
+    main();
+    break;
+}
+}
+
+// Fungsi yang menampilkan menu makanan/minuman
+void menu()
+{
+cout << "" << endl;
+cout << "ID -            Nama menu           - Kategori - Harga" << endl;
+cout << "1  -             Number 9           - Makanan  - 100" << endl;
+cout << "2  -          Two number 9s         - Makanan  - 175" << endl;
+cout << "3  -          Number 9 large        - Makanan  - 125" << endl;
+cout << "4  -             Number 6           - Makanan  - 75" << endl;
+cout << "5  -     Number 6 with extra dip    - Makanan  - 80" << endl; // DO YOU KNOW THIS REFERENCE???
+cout << "6  -             Number 7           - Makanan  - 150" << endl;
+cout << "7  -             Number 45          - Makanan  - 200" << endl;
+cout << "8  - Two number 45s one with cheese - Makanan  - 350" << endl;
+cout << "9  -              Soda              - Minuman  - 50" << endl;
+cout << "10 -           Large soda           - Minuman  - 75" << endl; 
+decision();
+}
+
+// Fungsi untuk membeli
+void beli()
+{
+int food;
+int count;
+
+cout << "" << endl;
+cout << "Apa yang ingin dibeli (ID lalu jumlah): "<< endl;
+cin >> food >> count;
+switch (food)
+{
+case (1):
+    q = q + count;
+    break;
+
+case (2):
+    w = w + count;
+    break;
+
+case (3):
+    e = e + count;
+    break;
+
+case (4):
+    r = r + count;
+    break;
+
+case (5):
+    t = t + count;
+    break;
+
+case (6):
+    y = y + count;
+    break;
+
+case (7):
+    u = u + count;
+    break;
+
+case (8):
+    i = i + count;
+    break;
+
+case (9):
+    o = o + count;
+    break;
+
+case (10):
+    p = p + count;
+    break;
+}
+decision();
+}
+
+// Fungsi yang menghasilkan total
+void strouke()
+{
+cout << "                      " << name << endl;
+if (q!=0){
+    cout << "Anda telah membeli #Number 9 sebanyak " << q << " seharga " << q*100 << endl;
+}
+if (w!=0){
+    cout << "Anda telah membeli #Two number 9s sebanyak " << w << " seharga " << w*175 << endl;
+}
+if (e!=0){
+    cout << "Anda telah membeli #Number 9 large sebanyak " << e << " seharga " << e*125 << endl;
+}
+if (r!=0){
+    cout << "Anda telah membeli #Number 6 sebanyak " << r << " seharga " << r*75 << endl;
+}
+if (t!=0){
+    cout << "Anda telah membeli #Number 6 with extra dip " << t << " seharga " << t*80 << endl;
+}
+if (y!=0){
+    cout << "Anda telah membeli #Number 7 sebanyak " << y << " seharga " << y*150 << endl;
+}
+if (u!=0){
+    cout << "Anda telah membeli #Number 45 sebanyak " << u << " seharga " << u*200 << endl;
+}
+if (i!=0){
+    cout << "Anda telah membeli #Two number 45s one with cheese sebanyak " << i << " seharga " << i*350 << endl;
+}
+if (o!=0){
+    cout << "Anda telah membeli #Soda sebanyak " << o << " seharga " << o*50 << endl;
+}
+if (p!=0){
+    cout << "Anda telah membeli #Large soda sebanyak " << p << " seharga " << p*75 << endl;
+}
+if (q==0 && w==0 && e==0 && r==0 && t==0 && y==0 && u==0 && i==0 && o==0 && p==0){
+    cout <<"                Tidak ada penjualan";
+}
+else{
+    cout << "                     Total : " << (q*100) + (w*175) + (e*125) + (r*75) + (t*80) + (y*150) + (u*200) + (i*350) + (o*50) + (p*75);
+}
+}
