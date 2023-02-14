@@ -1,1 +1,1 @@
-# Misi2-Modul2-SEKURO_Programming-2023-19622105
+dibuat dalam c++, input saja sesuai petunjuk program
